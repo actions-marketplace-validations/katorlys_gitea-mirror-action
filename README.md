@@ -23,11 +23,13 @@
 <!-- Main Body -->
 
 ## Introduction
-This is the GitHub Action for [github-mirror-gitea](https://github.com/katorlys/github-mirror-gitea).
-
 A GitHub Action to mirror all of your GitHub repositories to your Gitea server, with multiple options.
 
-Repositories created are mirrors of the original repositories, and by default Gitea will automatically fetch them every 8 hours.
+This action uses the Gitea `migrate` API to create mirror repositories, which is more efficient and reliable than manually cloning and pushing repositories.
+
+Repositories created are mirrors of the original repositories, and [by default Gitea will automatically fetch them every 8 hours](https://docs.gitea.com/usage/repo-mirror#pulling-from-a-remote-repository). So if you didn't create any new repositories on GitHub after running this action, you **don't** need to run the action again, just wait for Gitea to fetch the updates, or trigger the fetch manually in Gitea repository settings page.
+
+This is the GitHub Action for [github-mirror-gitea](https://github.com/katorlys/github-mirror-gitea).
 
 
 ## Prerequisites
